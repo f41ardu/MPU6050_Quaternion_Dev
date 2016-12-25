@@ -41,11 +41,11 @@ float [] Euler = new float [3]; // psi, theta, phi
 PImage img, img2;
 
 PFont font;
-final int VIEW_SIZE_X = 800, VIEW_SIZE_Y = 600;
+final int VIEW_SIZE_X = 1000, VIEW_SIZE_Y = 800;
 
 void setup() 
 {
-  size(800, 600, P3D);
+  size(1000, 800, P3D);
   String serialPort = Serial.list()[1];
   myPort = new Serial(this, serialPort, 115200);  
 // The font and the images must be located in the sketch's "data" directory to load successfully
@@ -61,8 +61,8 @@ void setup()
 }
 
 void draw() {
-  background(#000000);
-  fill(#ffffff);
+  background(0);
+//  fill(#ffffff);
 
   if (millis() - interval > 1000) {
     // resend single character to trigger DMP init/start
